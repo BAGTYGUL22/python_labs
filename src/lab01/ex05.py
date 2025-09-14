@@ -1,0 +1,7 @@
+fio=input('ФИО:')
+_fio=fio.strip()
+parts=_fio.split()
+initials="".join(p[0].upper() for p in parts if p)
+length=len(_fio)
+print(f'Инитициалы:{initials}')
+print(f'Длина(символов):{length}')
