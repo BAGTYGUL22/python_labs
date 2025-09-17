@@ -9,6 +9,7 @@ age=int(input('Возрвст: '))
 print(f'Привет {name}! Через год тебе будет {age+1}!')
 ```
 ![alt text](images/lab01/img01.png)
+
 **Задание №2**
 
 ```
@@ -21,6 +22,7 @@ _avg = _sum / 2
 print(f"sum={_sum:.2f}; avg={_avg:.2f}")
 ```
 ![alt text](images/lab01/img02.png)
+
 **Задание №3**
 ```
 price=float(input())
@@ -34,6 +36,7 @@ print(f'НДС:{vat_amount:.2f}₽')
 print(f'Итого к оплате:{total:.2f}₽')
 ```
 ![alt text](images/lab01/img03.png)
+
 **Задание №4**
 ```
 m=int(input('минуты:'))
@@ -42,6 +45,7 @@ minutes=m%60
 print(f'{hours}:{minutes:02d}')
 ```
 ![alt text](images/lab01/img04.png)
+
 **Задание №5**
 ```
 fio=input()
@@ -54,6 +58,7 @@ print(f'Инитициалы:{initials}')
 print(f'Длина(символов):{length}')
 ```
 ![alt text](images/lab01/img05.png)
+
 **Задание №6**
 ```
 N=int(input('in_1:'))
@@ -70,6 +75,7 @@ for _ in range(N):
 print('out:',onsite, remote)
 ```
 ![alt text](images/lab01/img06.png)
+
 **Задание №7**
 ```
 encoded= input('in:')
