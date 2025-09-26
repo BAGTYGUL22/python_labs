@@ -44,13 +44,13 @@ print(flatten([[1], [], [2, 3]]))
 #print(flatten([[1, 2], "ab"]))
 #print(min_max([]))
 ```
-![alt text](images/lab01/lab02/img.2.1.png)
+![alt text](images/lab02/img.2.1.png)
 
 При введении:
 print(flatten([[1, 2], "ab"]))
 print(min_max([]))
-
-
+![alt text](images/lab02/img.2.1.1error.png)
+![alt text](images/lab02/img.2.1.2error.png)
 
 **Задание №2**
 
@@ -101,7 +101,8 @@ print(col_sums([[-1, 1], [10, -10]] ))
 print(col_sums([[0, 0], [0, 0]]))
 #print(col_sums([[1, 2], [3]]))
 ```
-![alt text](images/lab01/lab02/img.2.2.png)
+![alt text](images/lab02/img.2.2.png)
+
 
 При введении:
 print(transpose([[1, 2], [3]]))
@@ -109,9 +110,11 @@ print(row_sums([[1, 2], [3]]))
 print(col_sums([[1, 2], [3]]))
 
 Вывод:
-![alt text](images/lab01/lab02/img.2.2.1error.png)
-![alt text](images/lab01/lab02/img.2.2.2error.png)
-![alt text](images/lab01/lab02/img.2.2.3error.png)
+![alt text](images/lab02/img.2.2.1error.png)
+![alt text](images/lab02/img.2.2.2error.png)
+![alt text](images/lab02/img.2.2.3error.png)
+
+
 **Задание №3**
 ```
 from typing import Tuple
@@ -133,12 +136,12 @@ print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
 #print(format_record(("  сидорова  анна   сергеевна ", 3.999)))
 ```
-![alt text](images/lab01/lab02/img.2.3.png)
+![alt text](images/lab02/img.2.3.png)
 
 При введении:
 print(format_record(("  сидорова  анна   сергеевна ", 3.999)))
 Вывод:
-![alt text](images/lab01/lab02/img.2.3.error.png)
+![alt text](images/lab02/img.2.3.error.png)
 
 
 <h1>Программирование и алгоритмизация</h1>
