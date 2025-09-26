@@ -47,8 +47,13 @@ print(flatten([[1], [], [2, 3]]))
 ![alt text](images/lab02/img.2.1.png)
 
 При введении:
+
 print(flatten([[1, 2], "ab"]))
+
 print(min_max([]))
+
+Вывод
+
 ![alt text](images/lab02/img.2.1.1error.png)
 ![alt text](images/lab02/img.2.1.2error.png)
 
@@ -105,8 +110,11 @@ print(col_sums([[0, 0], [0, 0]]))
 
 
 При введении:
+
 print(transpose([[1, 2], [3]]))
+
 print(row_sums([[1, 2], [3]]))
+
 print(col_sums([[1, 2], [3]]))
 
 Вывод:
@@ -139,7 +147,9 @@ print(format_record(("  сидорова  анна   сергеевна ", "ABB-
 ![alt text](images/lab02/img.2.3.png)
 
 При введении:
+
 print(format_record(("  сидорова  анна   сергеевна ", 3.999)))
+
 Вывод:
 ![alt text](images/lab02/img.2.3.error.png)
 
