@@ -13,7 +13,6 @@ def tokenize(text: str) -> list[str]:
     return re.findall(r'\w+(?:-\w+)*', text)
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
-    """Подсчет частоты токенов."""
     freq = {}
     for token in tokens:
         freq[token] = freq.get(token, 0) + 1 

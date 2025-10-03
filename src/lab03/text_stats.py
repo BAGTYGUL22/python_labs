@@ -11,3 +11,4 @@ def main():
     print("Топ-5:")
     for word, count in top5:
         print(f"{word}:{count}")
+ 
