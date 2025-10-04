@@ -41,6 +41,7 @@ print(top_n(count_freq(["bb","aa","bb","aa","cc"]), n=2))
 ```
 **Задание №2**
 
+```
 import sys
 from text import *
 
@@ -56,7 +57,7 @@ def text_info():
         print(f"{w}:{count_freq(tokenize(normalize(text))).get(w)}")
 
 text_info()
-
+```
 
 <h1>Программирование и алгоритмизация</h1>
 <h2>Лабораторная работа №2</h2>
