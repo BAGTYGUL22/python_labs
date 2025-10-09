@@ -8,8 +8,13 @@ def text_info():
     print(f"Всего слов: {len(tokenize(normalize(text)))}")
     print(f"Уникальных слов: {len(set(tokenize(normalize(text))))}")
     print("Топ-5:")
-    print("Слово" + " " * (len(max("Слово", max(words), key=len))-len(min("Слово", max(words), key=len))+1) + "|")
-    for w in count_freq(tokenize(normalize(text))):
-        print(f"{w}:{count_freq(tokenize(normalize(text))).get(w)}")
+    print_word_frequency_table(text)
+def print_word_frequency_table(text):
+    freqs = count_freq(tokenize(normalize(text)))
+    print('слово'.ljust(12), '|', 'частота')
+    print('-' * 22)
+    for word, count in sorted(freqs.items(), key=lambda x: x[1], reverse=True):
+         print(word.ljust(12), '|', count)
+
 
 text_info()

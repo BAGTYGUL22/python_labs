@@ -39,6 +39,7 @@ print(count_freq(["a","b","a","c","b","a"]))
 print(top_n(count_freq(["a","b","a","c","b","a"])))
 print(top_n(count_freq(["bb","aa","bb","aa","cc"]), n=2))
 ```
+![alt text](images/lab03/img.3.1.png)
 **Задание №2**
 
 ```
@@ -52,12 +53,18 @@ def text_info():
     print(f"Всего слов: {len(tokenize(normalize(text)))}")
     print(f"Уникальных слов: {len(set(tokenize(normalize(text))))}")
     print("Топ-5:")
-    print("Слово" + " " * (len(max("Слово", max(words), key=len))-len(min("Слово", max(words), key=len))+1) + "|")
-    for w in count_freq(tokenize(normalize(text))):
-        print(f"{w}:{count_freq(tokenize(normalize(text))).get(w)}")
+    print_word_frequency_table(text)
+def print_word_frequency_table(text):
+    freqs = count_freq(tokenize(normalize(text)))
+    print('слово'.ljust(12), '|', 'частота')
+    print('-' * 22)
+    for word, count in sorted(freqs.items(), key=lambda x: x[1], reverse=True):
+         print(word.ljust(12), '|', count)
+
 
 text_info()
 ```
+![alt text](images/lab03/img.3.2.png)
 
 <h1>Программирование и алгоритмизация</h1>
 <h2>Лабораторная работа №2</h2>
