@@ -7,59 +7,13 @@ import sys
 import argparse
 from pathlib import Path
 
+# Добавляем путь к lib в sys.path для импорта модулей
+lib_path = Path(__file__).parent.parent.parent / 'lib'
+sys.path.insert(0, str(lib_path))
+
 # Импортируем модули из предыдущих лабораторных
 from io_txt_csv import read_text, write_csv
-# Предполагаем, что у вас есть модуль freq в lab03 с функцией top_n
-from lib.text import top_n
-
-
-def normalize_and_tokenize(text: str) -> list[str]:
-    """
-    Нормализует и токенизирует текст.
-    
-    Args:
-        text: Исходный текст
-        
-    Returns:
-        list[str]: Список токенов (слов)
-    """
-    # Приводим к нижнему регистру
-    text = text.lower()
-    
-    # Убираем пунктуацию и разделяем на слова
-    words = []
-    current_word = []
-    
-    for char in text:
-        if char.isalpha() or char.isdigit():
-            current_word.append(char)
-        else:
-            if current_word:
-                words.append(''.join(current_word))
-                current_word = []
-    
-    # Добавляем последнее слово, если есть
-    if current_word:
-        words.append(''.join(current_word))
-    
-    return words
-
-
-def count_word_frequencies(words: list[str]) -> dict[str, int]:
-    """
-    Подсчитывает частоты слов.
-    
-    Args:
-        words: Список слов
-        
-    Returns:
-        dict[str, int]: Словарь с частотами слов
-    """
-    frequencies = {}
-    for word in words:
-        if word:  # Пропускаем пустые строки
-            frequencies[word] = frequencies.get(word, 0) + 1
-    return frequencies
+from lib.text import normalize, tokenize, count_freq, top_n
 
 
 def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") -> None:
@@ -82,11 +36,12 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
         print("Попробуйте указать другую кодировку с помощью --encoding")
         sys.exit(1)
     
-    # Нормализация и токенизация
-    words = normalize_and_tokenize(text)
+    # Нормализация и токенизация с использованием функций из lib/text.py
+    normalized_text = normalize(text, casefold=True, yo2e=True)
+    tokens = tokenize(normalized_text)
     
     # Подсчет частот
-    frequencies = count_word_frequencies(words)
+    frequencies = count_freq(tokens)
     
     # Сортировка: по убыванию частоты, при равенстве - по возрастанию слова
     sorted_words = sorted(frequencies.items(), 
@@ -97,14 +52,14 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
     write_csv(sorted_words, output_path, header)
     
     # Вывод резюме в консоль
-    total_words = len(words)
+    total_words = len(tokens)
     unique_words = len(frequencies)
     
     print(f"Всего слов: {total_words}")
     print(f"Уникальных слов: {unique_words}")
     
     if unique_words > 0:
-        top_5_words = top_n(frequencies, 5)  # Используем функцию из lab03
+        top_5_words = top_n(frequencies, 5)  # Используем функцию из lib/text.py
         print("Топ-5:")
         for i, (word, count) in enumerate(top_5_words, 1):
             print(f"  {i}. '{word}' - {count}")
