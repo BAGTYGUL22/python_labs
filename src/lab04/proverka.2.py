@@ -1,14 +1,28 @@
+#!/usr/bin/env python3
+"""
+Скрипт для анализа текста и генерации отчета в CSV.
+"""
+
 import sys
 import argparse
 from pathlib import Path
 
+
+# Импортируем модули из предыдущих лабораторных
 from io_txt_csv import read_text, write_csv
 from lib.text import normalize, tokenize, count_freq, top_n
 
 
 def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") -> None:
+    """
+    Генерирует отчет по текстовому файлу.
     
-    
+    Args:
+        input_path: Путь к входному файлу
+        output_path: Путь для сохранения CSV отчета
+        encoding: Кодировка входного файла
+    """
+    # Чтение входного файла
     try:
         text = read_text(input_path, encoding)
     except FileNotFoundError:
@@ -19,22 +33,22 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
         print("Попробуйте указать другую кодировку с помощью --encoding")
         sys.exit(1)
     
- 
+    # Нормализация и токенизация с использованием функций из lib/text.py
     normalized_text = normalize(text, casefold=True, yo2e=True)
     tokens = tokenize(normalized_text)
     
-    
+    # Подсчет частот
     frequencies = count_freq(tokens)
     
-    
+    # Сортировка: по убыванию частоты, при равенстве - по возрастанию слова
     sorted_words = sorted(frequencies.items(), 
                          key=lambda x: (-x[1], x[0]))
     
-    
+    # Запись CSV
     header = ("word", "count")
     write_csv(sorted_words, output_path, header)
     
-   
+    # Вывод резюме в консоль
     total_words = len(tokens)
     unique_words = len(frequencies)
     
@@ -42,7 +56,7 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
     print(f"Уникальных слов: {unique_words}")
     
     if unique_words > 0:
-        top_5_words = top_n(frequencies, 5)  
+        top_5_words = top_n(frequencies, 5)  # Используем функцию из lib/text.py
         print("Топ-5:")
         for i, (word, count) in enumerate(top_5_words, 1):
             print(f"  {i}. '{word}' - {count}")
@@ -53,7 +67,7 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
 
 
 def main():
-    
+    """Основная функция скрипта."""
     parser = argparse.ArgumentParser(
         description="Генератор отчета по частотности слов в тексте"
     )
