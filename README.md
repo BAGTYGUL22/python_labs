@@ -40,12 +40,7 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
 
 
 def ensure_parent_dir(path: str | Path) -> None:
-    """
-    Создать родительские директории, если их нет.
-    
-    Args:
-        path: Путь к файлу или директории
-    """
+ 
     path = Path(path)
     parent_dir = path.parent
     parent_dir.mkdir(parents=True, exist_ok=True)
@@ -69,10 +64,6 @@ if __name__ == "__main__":
 ```
 **Задание №2**
 ```
-#!/usr/bin/env python3
-"""
-Скрипт для анализа текста и генерации отчета в CSV.
-"""
 
 import sys
 import argparse
@@ -88,14 +79,7 @@ from lib.text import normalize, tokenize, count_freq, top_n
 
 
 def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") -> None:
-    """
-    Генерирует отчет по текстовому файлу.
     
-    Args:
-        input_path: Путь к входному файлу
-        output_path: Путь для сохранения CSV отчета
-        encoding: Кодировка входного файла
-    """
     # Чтение входного файла
     try:
         text = read_text(input_path, encoding)
