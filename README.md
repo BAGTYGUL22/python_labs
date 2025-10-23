@@ -196,7 +196,7 @@ print(top_n(count_freq(["bb","aa","bb","aa","cc"]), n=2))
 import sys
 from text import *
 
-def text_info():
+def text_in():
     text = sys.stdin.readline().strip()
     words = sorted(tokenize(normalize(text)), key=len, reverse=True)
     print(words)
@@ -212,7 +212,7 @@ def print_word_frequency_table(text):
          print(word.ljust(12), '|', count)
 
 
-text_info()
+text_in()
 ```
 ![alt text](images/lab03/img.3.2.png)
 
