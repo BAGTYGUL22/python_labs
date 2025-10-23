@@ -61,6 +61,8 @@ if __name__ == "__main__":
     except UnicodeDecodeError:
         print("Ошибка кодировки при чтении файла")
 ```
+![alt text](images/lab04/img.4.1.png)
+![alt text](images/lab04/img.4.1csv.png)
 **Задание №2**
 ```
 import sys
@@ -148,6 +150,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+![alt text](images/lab04/img.4.2.png)
+![alt text](images/lab04/img.4.2.csv.png)
 
 <h2>Лабораторная работа №3</h2>
 
