@@ -7,23 +7,14 @@
 from pathlib import Path
 import csv
 
-
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
-  
     path = Path(path)
-    
     with open(path, 'r', encoding=encoding) as file:
         return file.read()
 
-
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
-    
     path = Path(path)
-    
-   
     ensure_parent_dir(path)
-    
-   
     if rows:
         first_row_length = len(rows[0])
         for i, row in enumerate(rows):
@@ -32,15 +23,12 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
     
     with open(path, 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        
         if header is not None:
             writer.writerow(header)
-        
         writer.writerows(rows)
 
 
 def ensure_parent_dir(path: str | Path) -> None:
-  
     path = Path(path)
     parent_dir = path.parent
     parent_dir.mkdir(parents=True, exist_ok=True)
@@ -49,10 +37,7 @@ def ensure_parent_dir(path: str | Path) -> None:
 if __name__ == "__main__":
     
     from io_txt_csv import read_text, write_csv
-    
-   
     write_csv([("word", "count"), ("test", 3)], "data/check.csv")
- 
     try:
         txt = read_text("test_input.txt")
         print("Файл успешно прочитан")
@@ -73,10 +58,7 @@ from pathlib import Path
 from io_txt_csv import read_text, write_csv
 from lib.text import normalize, tokenize, count_freq, top_n
 
-
 def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") -> None:
-    
-    
     try:
         text = read_text(input_path, encoding)
     except FileNotFoundError:
@@ -87,25 +69,16 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
         print("Попробуйте указать другую кодировку с помощью --encoding")
         sys.exit(1)
     
- 
     normalized_text = normalize(text, casefold=True, yo2e=True)
     tokens = tokenize(normalized_text)
-    
-    
     frequencies = count_freq(tokens)
     
-    
-    sorted_words = sorted(frequencies.items(), 
-                         key=lambda x: (-x[1], x[0]))
-    
+    sorted_words = sorted(frequencies.items(), key=lambda x: (-x[1], x[0]))
     
     header = ("word", "count")
     write_csv(sorted_words, output_path, header)
-    
-   
     total_words = len(tokens)
     unique_words = len(frequencies)
-    
     print(f"Всего слов: {total_words}")
     print(f"Уникальных слов: {unique_words}")
     
@@ -118,7 +91,6 @@ def generate_report(input_path: str, output_path: str, encoding: str = "utf-8") 
         print("Топ-5: нет данных")
     
     print(f"Отчет сохранен в: {output_path}")
-
 
 def main():
     
