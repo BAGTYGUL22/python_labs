@@ -39,7 +39,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         for item in data:
             row = {key: item.get(key, "") for key in fieldnames}
             writer.writerow(row)
-json_to_csv(f"src/lab05/example1.json", f"src/lab05/example1_json.csv")
+json_to_csv(f"src/lab05/samples/example1.json", f"src/lab05/out/example1_json.csv")
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
     """
@@ -65,6 +65,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with json_file.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-csv_to_json(f"src/lab05/example2.csv", f"src/lab05/example2_csv.json")
+csv_to_json(f"src/lab05/samples/example2.csv", f"src/lab05/out/example2_csv.json")
 
 
