@@ -74,9 +74,15 @@ csv_to_json(f"src/lab05/samples/example2.csv", f"src/lab05/out/example2_csv.json
 
 ```
 ![alt text](images/lab05/img5.1.png)  
+
 ![alt text](images/lab05/img.5.1.2.png)
+
 ![alt text](images/lab05/img.5.2.png)
+
 ![alt text](images/lab05/img.5.2.2.png)
+
+
+
 **Задание 2**
 
 ```
@@ -123,7 +129,11 @@ csv_to_xlsx('src/lab05/samples/example2.csv', 'src/lab05/out/example3_csv.xlsx')
 
 ```
 ![alt text](images/lab05/img.5.2.png)
+
 ![alt text](images/lab05/img.5.3.png)
+
+
+
 
 <h2>Лабораторная работа №4</h2>
 
