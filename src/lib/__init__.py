@@ -1,1 +1,1 @@
-from src.lab03.lib.text import *
+from src.lab03.text import *
