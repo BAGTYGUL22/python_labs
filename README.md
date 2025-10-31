@@ -53,7 +53,7 @@ if args.command == "stats":
 
 **Задание 2**
 
-```
+```python
 import argparse
 from csv_xlsx import csv_to_xlsx
 from json_csv import json_to_csv, csv_to_json
@@ -100,7 +100,7 @@ python -m src.lab06.cli2 json2csv --in "src/lab05/samples/example1.json" --out "
 
 
 **Задание 1**
-```
+```python
 import json
 import csv
 from pathlib import Path
@@ -183,7 +183,7 @@ csv_to_json(f"src/lab05/samples/example2.csv", f"src/lab05/out/example2_csv.json
 
 **Задание 2**
 
-```
+```python
 from openpyxl import Workbook
 import csv
 from pathlib import Path
