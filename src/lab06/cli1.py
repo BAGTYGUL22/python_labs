@@ -1,5 +1,5 @@
 import  argparse
-from text import *
+from src.lab03.text import *
 
 def cat(text, n):
     f = open(text, "r").readlines()

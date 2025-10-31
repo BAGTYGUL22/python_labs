@@ -1,6 +1,6 @@
 import argparse
-from csv_xlsx import csv_to_xlsx
-from json_csv import json_to_csv, csv_to_json
+from src.lab05.csv_xlsx import csv_to_xlsx
+from src.lab05.json_csv import json_to_csv, csv_to_json
 
 
 
@@ -23,4 +23,12 @@ args = parser.parse_args()
 
 if args.command == "json2csv":
     json_to_csv(args.input,args.out)
+    print("Выполнено")
+
+if args.command == "csv2json":
+    csv_to_json(args.input,args.out)
+    print("Выполнено")
+
+if args.command == "csv2xlsx":
+    csv_to_xlsx(args.input,args.out)
     print("Выполнено")
