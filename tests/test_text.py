@@ -1,5 +1,5 @@
 import pytest
-from src.lab03.text import *
+from src.lib.text import normalize, tokenize, count_freq, top_n
 
 class TestText:
 
