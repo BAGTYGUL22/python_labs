@@ -1,5 +1,5 @@
-a = input("a: ").replace(',', '.')
-b = input("b: ").replace(',', '.')
+a = input("a: ").replace(",", ".")
+b = input("b: ").replace(",", ".")
 a = float(a)
 b = float(b)
 _sum = a + b

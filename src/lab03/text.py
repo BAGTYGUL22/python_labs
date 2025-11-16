@@ -1,21 +1,23 @@
 import re
 
+
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     if casefold:
         text = text.casefold()
     if yo2e:
-        text = text.replace('ё', 'е').replace('Ё', 'Е')
-    text = re.sub(r'\s+', ' ', text).strip()
+        text = text.replace("ё", "е").replace("Ё", "Е")
+    text = re.sub(r"\s+", " ", text).strip()
     return text
 
 
 def tokenize(text: str) -> list[str]:
-    return re.findall(r'\w+(?:-\w+)*', text)
+    return re.findall(r"\w+(?:-\w+)*", text)
+
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
     freq = {}
     for token in tokens:
-        freq[token] = freq.get(token, 0) + 1 
+        freq[token] = freq.get(token, 0) + 1
     return freq
 
 

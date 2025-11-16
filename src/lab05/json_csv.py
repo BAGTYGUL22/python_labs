@@ -2,6 +2,7 @@ import json
 import csv
 from pathlib import Path
 
+
 def json_to_csv(json_path: str, csv_path: str) -> None:
     """
     Преобразует JSON-файл в CSV.
@@ -22,7 +23,9 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             raise ValueError(f"Ошибка чтения JSON: {e}")
 
     if not data or not isinstance(data, list):
-        raise ValueError("Пустой JSON или неподдерживаемая структура: ожидается список словарей.")
+        raise ValueError(
+            "Пустой JSON или неподдерживаемая структура: ожидается список словарей."
+        )
     if not all(isinstance(item, dict) for item in data):
         raise ValueError("Все элементы JSON должны быть словарями.")
 
@@ -39,7 +42,10 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         for item in data:
             row = {key: item.get(key, "") for key in fieldnames}
             writer.writerow(row)
+
+
 json_to_csv(f"src/lab05/samples/example1.json", f"src/lab05/out/example1_json.csv")
+
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
     """
@@ -65,6 +71,5 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with json_file.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
 csv_to_json(f"src/lab05/samples/example2.csv", f"src/lab05/out/example2_csv.json")
-
-

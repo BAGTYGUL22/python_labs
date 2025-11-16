@@ -1,5 +1,6 @@
-import  argparse
+import argparse
 from src.lab03.text import *
+
 
 def cat(text, n):
     f = open(text, "r").readlines()
@@ -9,15 +10,14 @@ def cat(text, n):
     else:
         f = enumerate(f)
         for i in f:
-            print(i[0],i[1].replace("\n", ""))
+            print(i[0], i[1].replace("\n", ""))
 
 
-def stats(txt,n):
+def stats(txt, n):
     f = open(txt, "r").read()
-    txt = top_n(count_freq(tokenize(normalize(f))),n)
+    txt = top_n(count_freq(tokenize(normalize(f))), n)
     for a in txt:
-        print(a[1],a[0])
-
+        print(a[1], a[0])
 
 
 # def main():
@@ -25,20 +25,20 @@ parser = argparse.ArgumentParser("CLI‑утилиты лабораторной 
 subparsers = parser.add_subparsers(dest="command")
 
 # подкоманда cat
-cat_parser = subparsers.add_parser("cat",help = "Вывести содержимое файла")
-cat_parser.add_argument("--input",required = True)
-cat_parser.add_argument("-n", action="store_true",help = "Нумировать строки")
+cat_parser = subparsers.add_parser("cat", help="Вывести содержимое файла")
+cat_parser.add_argument("--input", required=True)
+cat_parser.add_argument("-n", action="store_true", help="Нумировать строки")
 
 # подкоманда stats
-stats_parser = subparsers.add_parser("stats",help = "Частоты слез")
-stats_parser.add_argument("--input",required = True)
-stats_parser.add_argument("--top",type = int, default = 5)
+stats_parser = subparsers.add_parser("stats", help="Частоты слез")
+stats_parser.add_argument("--input", required=True)
+stats_parser.add_argument("--top", type=int, default=5)
 
 args = parser.parse_args()
 # print("DEBUG:", args)
 
 if args.command == "cat":
-    cat(args.input,args.n)
+    cat(args.input, args.n)
 
 if args.command == "stats":
-    stats(args.input,args.top)
+    stats(args.input, args.top)
