@@ -1,9 +1,9 @@
 import json
 import csv
-import pytest
-from pathlib import Path
 import sys
 import os
+from pathlib import Path
+import pytest
 
 # Добавляем корневую папку в путь Python
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
