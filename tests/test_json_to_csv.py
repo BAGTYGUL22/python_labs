@@ -1,15 +1,18 @@
 import json
 import csv
-import sys
-import os
+
+# import sys
+# import os
 from pathlib import Path
 import pytest
 
 # Добавляем корневую папку в путь Python
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Импортируем из корневой папки
-from lib.json_csv import json_to_csv, csv_to_json
+# from lib.json_csv import json_to_csv, csv_to_json
+
+from src.lab05.json_csv import json_to_csv, csv_to_json
 
 
 def test_json_to_csv_roundtrip(tmp_path: Path):

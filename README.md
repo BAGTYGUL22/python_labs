@@ -3,16 +3,16 @@
 
 **Задание 1**
 
-```python
+``` python
 import pytest
-import sys
-import os
+#import sys
+#import os
 
-# Добавляем корневую папку в путь Python
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Импортируем из корневой папки
-from lib.text import normalize, tokenize, count_freq, top_n
+#sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+#from lib.text import normalize, tokenize, count_freq, top_n
+from src.lab03.text import normalize, tokenize, count_freq, top_n
 
 
 class TestText:
@@ -78,17 +78,18 @@ class TestText:
 ```python
 import json
 import csv
-import sys
-import os
+#import sys
+#import os
 from pathlib import Path
 import pytest
 
-# Добавляем корневую папку в путь Python
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Импортируем из корневой папки
-from lib.json_csv import json_to_csv, csv_to_json
+#sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+
+#from lib.json_csv import json_to_csv, csv_to_json
+
+from src.lab05.json_csv import json_to_csv, csv_to_json
 
 def test_json_to_csv_roundtrip(tmp_path: Path):
     src = tmp_path / "people.json"
@@ -155,6 +156,7 @@ def test_file_not_found_raises(func, tmp_path: Path):
     dst = tmp_path / "out.file"
     with pytest.raises(FileNotFoundError):
         func(str(non_existent_path), str(dst))
+
 ```
 
 ![alt text](images/lab07/img.7.2.png)

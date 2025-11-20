@@ -1,12 +1,14 @@
 import pytest
-import sys
-import os
+
+# import sys
+# import os
 
 # Добавляем корневую папку в путь Python
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Импортируем из корневой папки
-from lib.text import normalize, tokenize, count_freq, top_n
+# from lib.text import normalize, tokenize, count_freq, top_n
+from src.lab03.text import normalize, tokenize, count_freq, top_n
 
 
 class TestText:
