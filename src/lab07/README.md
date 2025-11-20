@@ -136,14 +136,14 @@ def test_csv_to_json_roundtrip(tmp_path: Path):
     ],
 )
 def test_invalid_content_raises(func, input_file, error, tmp_path: Path):
-    # Создаем файл с некорректным содержимым
+    
     fpath = tmp_path / input_file
     fpath.write_text("this is not valid json or csv", encoding="utf-8")
 
-    # Подготавливаем путь назначения
+    
     dst = tmp_path / "out.file"
 
-    # Выбираем функцию для теста
+    
     f = json_to_csv if func == "json_to_csv" else csv_to_json
 
     with pytest.raises(error):
