@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 88
-target-version = ['py39']
+target-version = ["py311"]  # ← обновлено
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -19,6 +19,7 @@ exclude = '''
 minversion = "6.0"
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]   # ← добавлено
 python_functions = ["test_*"]
 addopts = [
   "-v",
