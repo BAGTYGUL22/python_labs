@@ -68,9 +68,9 @@ class TestText:
     def test_top_n(self, freq, n, expected):
         assert top_n(freq, n) == expected
 ```
-![alt text](images/lab07/img.7.1.png)
+![alt text](../../images/lab07/img.7.1.png)
 
-![alt text](images/lab07/img.7.1.1.png)
+![alt text](../../images/lab07/img.7.1.1.png)
 
 
 **Задание 2**
@@ -159,6 +159,6 @@ def test_file_not_found_raises(func, tmp_path: Path):
 
 ```
 
-![alt text](images/lab07/img.7.2.png)
+![alt text](../../images/lab07/img.7.2.2.png)
 
-![alt text](images/lab07/img.7.2.2.png)
+![alt text](../../images/lab07/img.7.2.png)
