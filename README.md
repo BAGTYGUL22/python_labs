@@ -170,6 +170,13 @@ def test_file_not_found_raises(func, tmp_path: Path):
 
 ![alt text](images/lab07/img.7.black.check.png)
 
+<h2>Pytest -cov<h2>
+
+![alt text](images/lab07/img.pytest-cov.png)
+
+![alt text](images/lab07/img.pytest-cov1.png)
+
+
 
 
 <h2>Лабораторная работа №6</h2>
