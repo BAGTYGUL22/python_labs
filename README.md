@@ -182,9 +182,12 @@ if __name__ == "__main__":
 ```
 ![alt text](images/lab9/img9.png)
 
-<Было>
+Было
+
 ![alt text](images/lab9/img.9.1.png)
-<Стало>
+
+Стало
+
 ![alt text](images/lab9/img.9.2.png)
 
 
