@@ -201,4 +201,4 @@ if __name__ == "__main__":
     print(lst.display())  # [0] -> [1] -> [2] -> None
 ```
 
-![alt text](images/lab10/img10.png)
+![alt text](../../images/lab10/img10.png)

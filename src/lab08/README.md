@@ -100,8 +100,8 @@ for s in students:
 students_to_json(students, "data/lab08/students_output.json")
 print(" Файл students_output.json успешно создан!")
 ```
-![alt text](images/lab08/img.8.png)
+![alt text](../../images/lab08/img.8.png)
 
-![alt text](images/lab08/img8.input.json.png)
+![alt text](../../images/lab08/img8.input.json.png)
 
-![alt text](images/lab08/img8.output.json.png)
+![alt text](../../images/lab08/img8.output.json.png)
