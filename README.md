@@ -398,11 +398,13 @@ if __name__ == "__main__":
 
 ![alt text](images/lab9/img.9.2.png)
 
-
 <h2>Лабораторная работа №8</h2>
 
+
 **Задание1**
+
 ```python
+
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Dict, Any
@@ -450,8 +452,8 @@ class Student:
     def __str__(self) -> str:
         return f"Студент: {self.fio}, Группа: {self.group}, Возраст: {self.age()}, GPA: {self.gpa:.2f}"
 ```
+**Задание 2**
 
-**Задание2**
 ```python
 import json
 from pathlib import Path
