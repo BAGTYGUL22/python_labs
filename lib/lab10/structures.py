@@ -1,9 +1,10 @@
 from collections import deque
 from typing import Any, Optional
 
+
 class Stack:
     """Стек (LIFO) на основе list."""
-    
+
     def __init__(self):
         self._data: list[Any] = []
 
@@ -36,7 +37,7 @@ class Stack:
 
 class Queue:
     """Очередь (FIFO) на основе collections.deque."""
-    
+
     def __init__(self):
         self._data: deque[Any] = deque()
 
@@ -65,22 +66,23 @@ class Queue:
 
     def __repr__(self) -> str:
         return f"Queue({list(self._data)})"
-    
+
+
 if __name__ == "__main__":
     print("🔍 Тестирование Stack:")
     s = Stack()
     s.push(10)
     s.push(20)
-    print(f"  peek: {s.peek()}")        # 20
-    print(f"  pop: {s.pop()}")          # 20
-    print(f"  pop: {s.pop()}")          # 10
+    print(f"  peek: {s.peek()}")  # 20
+    print(f"  pop: {s.pop()}")  # 20
+    print(f"  pop: {s.pop()}")  # 10
     print(f"  пустой: {s.is_empty()}")  # True
 
     print("\n🔍 Тестирование Queue:")
     q = Queue()
     q.enqueue("A")
     q.enqueue("B")
-    print(f"  peek: {q.peek()}")        # A
+    print(f"  peek: {q.peek()}")  # A
     print(f"  dequeue: {q.dequeue()}")  # A
     print(f"  dequeue: {q.dequeue()}")  # B
     print(f"  пустая: {q.is_empty()}")  # True

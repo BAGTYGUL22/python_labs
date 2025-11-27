@@ -1,11 +1,12 @@
 from typing import Any, Optional, Iterator
 
+
 class Node:
     """Узел односвязного списка."""
-    
-    __slots__ = ('value', 'next')
-    
-    def __init__(self, value: Any, next: Optional['Node'] = None):
+
+    __slots__ = ("value", "next")
+
+    def __init__(self, value: Any, next: Optional["Node"] = None):
         self.value = value
         self.next = next
 
@@ -15,7 +16,7 @@ class Node:
 
 class SinglyLinkedList:
     """Односвязный список."""
-    
+
     def __init__(self):
         self.head: Optional[Node] = None
         self.tail: Optional[Node] = None  # для O(1) append
@@ -43,7 +44,7 @@ class SinglyLinkedList:
         """Вставить элемент по индексу. Поддерживает вставку в конец."""
         if idx < 0 or idx > self._size:
             raise IndexError("list index out of range")
-        
+
         if idx == 0:
             self.prepend(value)
         elif idx == self._size:
@@ -62,7 +63,7 @@ class SinglyLinkedList:
         """Удалить первое вхождение значения. Если не найдено — ничего не делает."""
         if self.head is None:
             return
-        
+
         # Удаление из головы
         if self.head.value == value:
             self.head = self.head.next
@@ -70,12 +71,12 @@ class SinglyLinkedList:
                 self.tail = None
             self._size -= 1
             return
-        
+
         # Поиск предыдущего узла
         current = self.head
         while current.next is not None and current.next.value != value:
             current = current.next
-        
+
         if current.next is not None:
             # Нашли — удаляем
             current.next = current.next.next
@@ -115,9 +116,9 @@ if __name__ == "__main__":
     ll.append("Y")
     ll.prepend("START")
     ll.insert(2, "MIDDLE")
-    print(f"  Список: {ll}")           # [START] -> [X] -> [MIDDLE] -> [Y] -> None
-    print(f"  Длина: {len(ll)}")       # 4
-    print(f"  Как список: {list(ll)}") # ['START', 'X', 'MIDDLE', 'Y']
+    print(f"  Список: {ll}")  # [START] -> [X] -> [MIDDLE] -> [Y] -> None
+    print(f"  Длина: {len(ll)}")  # 4
+    print(f"  Как список: {list(ll)}")  # ['START', 'X', 'MIDDLE', 'Y']
 
     ll.remove("MIDDLE")
     print(f"  После удаления 'MIDDLE': {ll}")  # [START] -> [X] -> [Y] -> None
