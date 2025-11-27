@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 from src.lab08.models import Student
 
+
 class Group:
     FIELDS = ["fio", "birthdate", "group", "gpa"]
 
@@ -132,7 +133,6 @@ class Group:
             "groups": group_counts,
             "top_5_students": top_5_serialized,
         }
-
 
 
 if __name__ == "__main__":
